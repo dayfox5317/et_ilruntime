@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace ET
 {
+    [ObjectSystem]
     public class UILobbyComponentAwakeSystem : AwakeSystem<UILobbyComponent>
     {
         public override void Awake(UILobbyComponent self)
@@ -10,7 +11,7 @@ namespace ET
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 			
             self.enterMap = rc.Get<GameObject>("EnterMap");
-            self.enterMap.GetComponent<Button>().onClick.AddListener(self.EnterMap);
+            self.enterMap.GetComponent<Button>().onClick.AddListener(()=>self.EnterMap());
             self.text = rc.Get<GameObject>("Text").GetComponent<Text>();
         }
     }
@@ -19,6 +20,7 @@ namespace ET
     {
         public static void EnterMap(this UILobbyComponent self)
         {
+            Debug.Log("f");
             MapHelper.EnterMapAsync(self.ZoneScene(), "Map").Coroutine();
         }
     }

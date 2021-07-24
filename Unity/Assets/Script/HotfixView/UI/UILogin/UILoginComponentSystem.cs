@@ -12,11 +12,11 @@ namespace ET
     {
         public override void Awake(UILoginComponent self)
         {
-            LoginHelper.Login(self.DomainScene(), "127.0.0.1:10002", "123").Coroutine();
-            //ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            //self.loginBtn = rc.Get<GameObject>("LoginBtn");
-            //self.loginBtn.GetComponent<Button>().onClick.AddListener(() => self.OnLogin());
-            //self.account = rc.Get<GameObject>("Account");
+            //  LoginHelper.Login(self.DomainScene(), "127.0.0.1:10002", "123").Coroutine();
+            ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
+            self.loginBtn = rc.Get<GameObject>("LoginBtn");
+            self.loginBtn.GetComponent<Button>().onClick.AddListener(() => self.OnLogin());
+            self.account = rc.Get<GameObject>("Account");
         }
     }
 

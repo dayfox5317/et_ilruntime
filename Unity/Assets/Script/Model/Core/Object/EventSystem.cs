@@ -133,7 +133,7 @@ namespace ET
                     {
                         continue;
                     }
-                    object[] objects = type.GetCustomAttributes(attType, false);
+                    object[] objects = type.GetCustomAttributes(attType, true);
                     if (objects.Length == 0)
                     {
                         continue;
@@ -362,7 +362,7 @@ namespace ET
                 }
                 catch (Exception e)
                 {
-                    Log.Error(e);
+                    Log.Error(e.StackTrace);
                 }
             }
         }
@@ -705,7 +705,7 @@ namespace ET
             {
                 return;
             }
-            var list = ListComponent<ETTask>.Create();
+            using var list = ListComponent<ETTask>.Create();
 
             foreach (IEvent obj in iEvents)
             {
@@ -719,24 +719,24 @@ namespace ET
             try
             {
                 await ETTaskHelper.WaitAll(list.List);
-                list.Dispose();
+                 //list.Dispose();
             }
             catch (Exception e)
             {
-                list.Dispose();
+                //    list.Dispose();
                 Log.Error(e);
             }
         }
 
 #else
-    public async ETTask Publish<T>(T a) where T : class
+        public async ETTask Publish<T>(T a) where T : struct
         {
             List<IEvent> iEvents;
             if (!this.allEvents.TryGetValue(typeof(T), out iEvents))
             {
                 return;
             }
-            var list = ListComponent<ETTask>.Create();
+            using var list = ListComponent<ETTask>.Create();
 
             foreach (IEvent obj in iEvents)
             {
@@ -750,11 +750,11 @@ namespace ET
             try
             {
                 await ETTaskHelper.WaitAll(list.List);
-                list.Dispose();
+               
             }
             catch (Exception e)
             {
-                list.Dispose();
+               
                 Log.Error(e);
             }
         }

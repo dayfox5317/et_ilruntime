@@ -7,7 +7,7 @@ using System.IO;
 
 public static class ILRuntimeCLRBinding
 {
-    static string BindingPath = "Assets/Clod/ILBinding";
+    static string BindingPath = "Assets/Cold/ILBinding";
 
 
     [MenuItem("Tools/ILRuntime/Generate CLR Binding Code")]
@@ -33,7 +33,7 @@ public static class ILRuntimeCLRBinding
         types.Add(typeof(List<ILRuntime.Runtime.Intepreter.ILTypeInstance>));
 
         ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(types, BindingPath);
-        AssetDatabase.Refresh();
+      
     }
 
     [MenuItem("Tools/ILRuntime/Generate CLR Binding Code by Analysis")]
@@ -43,31 +43,28 @@ public static class ILRuntimeCLRBinding
         //用新的分析热更dll调用引用来生成绑定代码
         ILRuntime.Runtime.Enviorment.AppDomain domain = new ILRuntime.Runtime.Enviorment.AppDomain();
 
-        //FileStream fs1 = new FileStream("Assets/Res/Code/Model.dll.bytes", FileMode.Open, FileAccess.Read);
-        //FileStream fs2 = new FileStream("Assets/Res/Code/ModelView.dll.bytes", FileMode.Open, FileAccess.Read);
-        //FileStream fs3 = new FileStream("Assets/Res/Code/Hotfix.dll.bytes", FileMode.Open, FileAccess.Read);
-        //FileStream fs4 = new FileStream("Assets/Res/Code/HotfixView.dll.bytes", FileMode.Open, FileAccess.Read);
+        FileStream fs1 = new FileStream("Assets/Res/Code/Model.dll.bytes", FileMode.Open, FileAccess.Read);
+        FileStream fs2 = new FileStream("Assets/Res/Code/ModelView.dll.bytes", FileMode.Open, FileAccess.Read);
+        FileStream fs3 = new FileStream("Assets/Res/Code/Hotfix.dll.bytes", FileMode.Open, FileAccess.Read);
+        FileStream fs4 = new FileStream("Assets/Res/Code/HotfixView.dll.bytes", FileMode.Open, FileAccess.Read);
 
-        //domain.LoadAssembly(fs1);
-        //domain.LoadAssembly(fs2);
-        //domain.LoadAssembly(fs3);
-        //domain.LoadAssembly(fs4);
+        domain.LoadAssembly(fs1);
+        domain.LoadAssembly(fs2);
+        domain.LoadAssembly(fs3);
+        domain.LoadAssembly(fs4);
 
-        FileStream Sripte = new FileStream("Assets/Res/Code/Sripte.dll.bytes", FileMode.Open, FileAccess.Read);
-        domain.LoadAssembly(Sripte);
-
-
+       
 
         //Crossbind Adapter is needed to generate the correct binding code
         ETModel.ILHelper.InitILRuntime(domain);
         ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, BindingPath);
 
-        //fs1.Close();
-        //fs2.Close();
-        //fs3.Close();
-        //fs4.Close();
+        fs1.Close();
+        fs2.Close();
+        fs3.Close();
+        fs4.Close();
 
-        Sripte.Close();
+
 
         AssetDatabase.Refresh();
     }

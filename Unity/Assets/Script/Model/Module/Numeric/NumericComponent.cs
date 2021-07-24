@@ -7,7 +7,7 @@ namespace ET
 #if SERVER
 		public struct NumbericChange
 #else
-		public class NumbericChange
+		public struct NumbericChange
 #endif
 		{
 			public Entity Parent;

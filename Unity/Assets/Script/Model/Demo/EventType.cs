@@ -4,72 +4,72 @@ namespace ET
     {
         //这里都换成 class 不知道为什么 在ilruntime  Game.EventSystem.Publish发布后 出现NotSupportedException: Specified method is not supported. 报错
         //但是看烟雨的Demo ILRT 中却可以直接使用 strtct
-        public class AppStart
+        public struct AppStart
         {
         }
 
-        public class ChangePosition
-        {
-            public Unit Unit;
-        }
-
-        public class ChangeRotation
+        public struct ChangePosition
         {
             public Unit Unit;
         }
 
-        public class PingChange
+        public struct ChangeRotation
+        {
+            public Unit Unit;
+        }
+
+        public struct PingChange
         {
             public Scene ZoneScene;
             public long Ping;
         }
 
-        public class AfterCreateZoneScene
+        public struct AfterCreateZoneScene
         {
             public Scene ZoneScene;
         }
 
-        public class AfterCreateLoginScene
+        public struct AfterCreateLoginScene
         {
             public Scene LoginScene;
         }
 
-        public class AppStartInitFinish
+        public struct AppStartInitFinish
         {
             public Scene ZoneScene;
         }
 
-        public class LoginFinish
+        public struct LoginFinish
         {
             public Scene ZoneScene;
         }
 
-        public class LoadingBegin
+        public struct LoadingBegin
         {
             public Scene Scene;
         }
 
-        public class LoadingFinish
+        public struct LoadingFinish
         {
             public Scene Scene;
         }
 
-        public class EnterMapFinish
+        public struct EnterMapFinish
         {
             public Scene ZoneScene;
         }
 
-        public class AfterUnitCreate
+        public struct AfterUnitCreate
         {
             public Unit Unit;
         }
 
-        public class MoveStart
+        public struct MoveStart
         {
             public Unit Unit;
         }
 
-        public class MoveStop
+        public struct MoveStop
         {
             public Unit Unit;
         }

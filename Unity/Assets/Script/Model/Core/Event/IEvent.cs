@@ -14,7 +14,7 @@ namespace ET
 #if SERVER
     public abstract class AEvent<A> : IEvent where A : struct
 #else
-	public abstract class AEvent<A>: IEvent where A: class
+	public abstract class AEvent<A>: IEvent where A: struct
 #endif
 
     {
