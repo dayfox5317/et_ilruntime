@@ -20,8 +20,8 @@ namespace ET
     {
         public static void EnterMap(this UILobbyComponent self)
         {
-            Debug.Log("f");
-            MapHelper.EnterMapAsync(self.ZoneScene(), "Map").Coroutine();
+
+            EnterMapHelper.EnterMapAsync(self.ZoneScene()).Coroutine();
         }
     }
 }

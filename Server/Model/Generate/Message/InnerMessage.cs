@@ -1,4 +1,5 @@
 using ET;
+using ETModel;
 using ProtoBuf;
 using System.Collections.Generic;
 namespace ET

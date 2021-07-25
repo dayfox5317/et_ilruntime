@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
@@ -25,7 +25,5 @@ namespace ET
         public static NetInnerComponent Instance;
 
         public IMessageDispatcher MessageDispatcher { get; set; }
-        
-        public Random Random = new Random(Guid.NewGuid().GetHashCode());
     }
 }

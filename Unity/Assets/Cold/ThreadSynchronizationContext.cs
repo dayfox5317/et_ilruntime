@@ -37,7 +37,7 @@ namespace ETModel
                 }
                 catch (Exception e)
                 {
-#if SERVER
+#if NOT_UNITY
                     ET.Log.Error(e);
 #else
                     UnityEngine.Debug.LogError(e);
@@ -61,7 +61,7 @@ namespace ETModel
                 }
                 catch (Exception ex)
                 {
-#if SERVER
+#if NOT_UNITY
                     ET.Log.Error(ex);
 #else
                     UnityEngine.Debug.LogException(ex);

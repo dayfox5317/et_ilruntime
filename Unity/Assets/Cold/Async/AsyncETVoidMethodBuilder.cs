@@ -25,8 +25,8 @@ namespace ETModel
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-#if SERVER
-             ET.Log.Error(exception);
+#if NOT_UNITY
+            ET.Log.Error(exception);
 #else
             UnityEngine.Debug.LogError(exception);
 #endif

@@ -8,7 +8,7 @@ namespace ETModel
 	/// <summary>
 	/// Dispose适配
 	/// </summary>
-//	[ILAdapter]
+	//[ILAdapter]
 	public class IDisposableClassInheritanceAdaptor : CrossBindingAdaptor
 	{
 		public override Type BaseCLRType

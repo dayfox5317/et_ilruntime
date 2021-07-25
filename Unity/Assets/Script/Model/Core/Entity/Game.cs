@@ -7,7 +7,7 @@ namespace ET
 {
     public static class Game
     {
-#if SERVER
+#if SERVER||NOT_UNITY
         public static ThreadSynchronizationContext ThreadSynchronizationContext => ThreadSynchronizationContext.Instance;
 #endif
         public static TimeInfo TimeInfo => TimeInfo.Instance;
@@ -35,11 +35,33 @@ namespace ET
 
         public static Options Options;
 
+
+#if SERVER || NOT_UNITY
+        static ILog __log;
+        public static ILog ILog
+        {
+            get
+            {
+                if (__log == null)
+                {
+                    __log =  new NLogger("Server");
+                }
+                return __log;
+            }
+            set
+            {
+                __log = value;
+            }
+        }
+#else
+        public static ILog ILog;
+#endif
+
         public static List<Action> FrameFinishCallback = new List<Action>();
 
         public static void Update()
         {
-#if SERVER
+#if SERVER || NOT_UNITY
             ThreadSynchronizationContext.Update();
 #endif
             TimeInfo.Update();

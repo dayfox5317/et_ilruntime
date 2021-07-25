@@ -36,8 +36,8 @@ namespace ET
             {
                 return;
             }
-            
-            Log.ILog.Debug("zone: {0} {1}", zone, message);
+
+            Game.ILog.Debug("zone: {0} {1}", zone, message);
         }
         
         public static void LogMsg(ushort opcode, long actorId, object message)
@@ -46,8 +46,8 @@ namespace ET
             {
                 return;
             }
-            
-            Log.ILog.Debug("actorId: {0} {1}", actorId, message);
+
+            Game.ILog.Debug("actorId: {0} {1}", actorId, message);
         }
     }
 }

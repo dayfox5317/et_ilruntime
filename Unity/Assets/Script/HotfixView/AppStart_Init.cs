@@ -48,7 +48,8 @@ namespace ET
 
             ResourcesComponent.Instance.LoadBundle("unit.unity3d");
 
-            Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Process");
+            //Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Process");
+            Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             await Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
             await ETTask.CompletedTask;
         }

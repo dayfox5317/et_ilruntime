@@ -23,8 +23,9 @@ namespace ET
         {
             Instance = this;
         }
-		
-		//[ProtoAfterDeserialization]
+	#if NOT_UNITY
+		[ProtoAfterDeserialization]
+    #endif
         public void AfterDeserialization()
         {
             foreach (StartMachineConfig config in list)
@@ -77,8 +78,9 @@ namespace ET
 		[ProtoMember(3, IsRequired  = true)]
 		public string OuterIP { get; set; }
 
-
-		//[ProtoAfterDeserialization]
+     #if   NOT_UNITY
+		[ProtoAfterDeserialization]
+     #endif
         public void AfterDeserialization()
         {
             this.EndInit();

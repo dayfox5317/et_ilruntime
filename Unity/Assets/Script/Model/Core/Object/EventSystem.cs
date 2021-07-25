@@ -108,7 +108,7 @@ namespace ET
         public void Init()
         {
 
-#if SERVER
+#if SERVER || NOT_UNITY
             MonoInit();   
 #else
             if (Define.IsILRuntime)

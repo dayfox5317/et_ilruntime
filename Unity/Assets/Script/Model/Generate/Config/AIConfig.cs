@@ -23,8 +23,9 @@ namespace ET
         {
             Instance = this;
         }
-		
-		//[ProtoAfterDeserialization]
+	#if NOT_UNITY
+		[ProtoAfterDeserialization]
+    #endif
         public void AfterDeserialization()
         {
             foreach (AIConfig config in list)
@@ -81,8 +82,9 @@ namespace ET
 		[ProtoMember(5, IsRequired  = true)]
 		public int[] NodeParams { get; set; }
 
-
-		//[ProtoAfterDeserialization]
+     #if   NOT_UNITY
+		[ProtoAfterDeserialization]
+     #endif
         public void AfterDeserialization()
         {
             this.EndInit();

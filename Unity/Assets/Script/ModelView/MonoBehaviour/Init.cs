@@ -12,7 +12,7 @@ namespace ET
     {
         public static void Start()
         {
-            Log.Info($"热梗层");
+            Log.Info($"热更层");
             GameLoop.onUpdate += Update;
             GameLoop.onLateUpdate += LateUpdate;
             GameLoop.onApplicationQuit += OnApplicationQuit;

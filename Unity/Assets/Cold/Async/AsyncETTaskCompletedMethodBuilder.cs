@@ -23,7 +23,7 @@ namespace ETModel
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-#if SERVER
+#if NOT_UNITY
             ET.Log.Error(exception);
 #else
             UnityEngine.Debug.LogError(exception);

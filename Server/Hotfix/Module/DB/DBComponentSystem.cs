@@ -245,6 +245,7 @@ namespace ET
 
 	    public static async ETTask<long> Remove<T>(this DBComponent self, Expression<Func<T, bool>> filter, string collection = null) where T : Entity
 	    {
+		   
 		    using (await CoroutineLockComponent.Instance.Wait(CoroutineLockType.DB, RandomHelper.RandInt64() % DBComponent.TaskCount))
 		    {
 			    DeleteResult result = await self.GetCollection<T>(collection).DeleteManyAsync(filter);

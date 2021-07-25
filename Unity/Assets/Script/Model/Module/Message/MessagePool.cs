@@ -1,5 +1,5 @@
 ﻿using System;
-#if !SERVER
+#if !NOT_UNITY
 using System.Collections.Generic;
 
 #endif
@@ -14,39 +14,36 @@ namespace ET
             get;
         } = new MessagePool();
 
-#if !NOT_CLIENT
+#if !NOT_UNITY
         private readonly Dictionary<Type, Queue<object>> dictionary = new Dictionary<Type, Queue<object>>();
 #endif
 
         public object Fetch(Type type)
         {
-#if !NOT_CLIENT
-            Queue<object> queue;
-            if (!this.dictionary.TryGetValue(type, out queue))
-            {
-                queue = new Queue<object>();
-                this.dictionary.Add(type, queue);
-            }
+            //Queue<object> queue;
+            //if (!this.dictionary.TryGetValue(type, out queue))
+            //{
+            //    queue = new Queue<object>();
+            //    this.dictionary.Add(type, queue);
+            //}
+            //
+            //object obj;
+            //if (queue.Count > 0)
+            //{
+            //    obj = queue.Dequeue();
+            //}
+            //else
+            //{
+            //    obj = Activator.CreateInstance(type);
+            //}
 
-            object obj;
-            if (queue.Count > 0)
-            {
-                obj = queue.Dequeue();
-            }
-            else
-            {
-                obj = Activator.CreateInstance(type);
-            }
-
-            return obj;
-#else
-			return Activator.CreateInstance(type);
-#endif
+            //return obj;
+            return Activator.CreateInstance(type);
         }
 
         public T Fetch<T>() where T : class
         {
-            T t = (T) this.Fetch(typeof (T));
+            T t = (T)this.Fetch(typeof(T));
             return t;
         }
 

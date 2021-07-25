@@ -23,8 +23,9 @@ namespace ET
         {
             Instance = this;
         }
-		
+	#if NOT_UNITY
 		[ProtoAfterDeserialization]
+    #endif
         public void AfterDeserialization()
         {
             foreach (StartProcessConfig config in list)
@@ -76,9 +77,12 @@ namespace ET
 		public int MachineId { get; set; }
 		[ProtoMember(3, IsRequired  = true)]
 		public int InnerPort { get; set; }
+		[ProtoMember(4, IsRequired  = true)]
+		public string AppName { get; set; }
 
-
+     #if   NOT_UNITY
 		[ProtoAfterDeserialization]
+     #endif
         public void AfterDeserialization()
         {
             this.EndInit();

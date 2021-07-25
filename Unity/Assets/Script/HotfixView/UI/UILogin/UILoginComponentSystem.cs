@@ -25,7 +25,7 @@ namespace ET
         public static void OnLogin(this UILoginComponent self)
         {
             Log.Info("点了吗");
-            LoginHelper.Login(self.DomainScene(), "127.0.0.1:10002", self.account.GetComponent<InputField>().text).Coroutine();
+            LoginHelper.Login(self.DomainScene(), ConstValue.LoginAddress, self.account.GetComponent<InputField>().text,"1111").Coroutine();
         }
     }
 }

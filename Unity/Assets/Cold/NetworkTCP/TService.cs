@@ -66,7 +66,7 @@ namespace ET
 			
 			if (socketError != SocketError.Success)
 			{
-#if SERVER
+#if NOT_UNITY
 
 				Log.Error($"accept error {socketError}");
 #else
@@ -87,7 +87,7 @@ namespace ET
 			}
 			catch (Exception exception)
 			{
-#if SERVER
+#if NOT_UNITY
 
 				Log.Error(exception);
 #else
@@ -171,7 +171,7 @@ namespace ET
 			}
 			catch (Exception e)
 			{
-#if SERVER
+#if NOT_UNITY
 
 				Log.Error($"accept error {e}");
 #else

@@ -283,7 +283,7 @@ namespace ET
             int i = 0;
             foreach (string bundle in bundleList)
             {
-                var dis = await CoroutineLockComponent.Instance.Wait((int)CoroutineLockType.Resources, bundle.GetHashCode());
+                var dis = await CoroutineLockComponent.Instance.Wait(CoroutineLockType.Resources, bundle.GetHashCode());
 
                 if (++i % 5 == 0)
                 {
@@ -462,7 +462,7 @@ namespace ET
                 {
 
                     Log.Info($"等待携程锁");
-                    var ts = await CoroutineLockComponent.Instance.Wait((int)CoroutineLockType.Resources, dependency.GetHashCode());
+                    var ts = await CoroutineLockComponent.Instance.Wait(CoroutineLockType.Resources, dependency.GetHashCode());
                     {
                         Log.Info("携程锁等完了 ");
                         ABInfo abInfo = await this.LoadOneBundleAsync(dependency);
@@ -574,7 +574,7 @@ namespace ET
         // 加载ab包中的all assets
         private async ETTask LoadOneBundleAllAssets(ABInfo abInfo)
         {
-            var lockCom = await CoroutineLockComponent.Instance.Wait((int)CoroutineLockType.Resources, abInfo.Name.GetHashCode());
+            var lockCom = await CoroutineLockComponent.Instance.Wait(CoroutineLockType.Resources, abInfo.Name.GetHashCode());
             if (abInfo.IsDisposed || abInfo.AlreadyLoadAssets)
             {
                 return;

@@ -15,9 +15,9 @@ namespace ET
             if (GUILayout.Button("启动"))
             {
                 string arguments = $"";
-                ProcessHelper.Run("App.exe", arguments, "../Bin/");
+                ProcessHelper.Run("Server.App.exe", arguments, "../Bin/");
             }
-
+          
             if (GUILayout.Button("启动数据库"))
             {
                 ProcessHelper.Run("mongod", @"--dbpath=db", "../Database/bin/");

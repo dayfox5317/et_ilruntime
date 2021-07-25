@@ -1,0 +1,168 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>ET</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>../../Bin/</OutputPath>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>../../Bin/</OutputPath>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
+    </PropertyGroup>
+  
+  
+  
+  
+    <ItemGroup>
+      
+        
+      
+        <Compile Include="..\..\Unity\Assets\Editor\Helper\MongoHelper.cs">
+          <Link>Base\MongoHelper.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\Config\**\*.cs">
+            <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Core\**\*.cs">
+            <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\AI\**\*.cs">
+            <Link>Module\AI\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\Network\**\*.cs">
+            <Link>Module\Network\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\NetworkTCP\**\*.cs">
+            <Link>Module\NetworkTCP\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Server\Model\Module\NetworkTCP\**\*.cs">
+            <Link>Module\NetworkTCP\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\Message\**\*.cs">
+            <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Server\Model\Module\Message\**\*.cs">
+            <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\Numeric\**\*.cs">
+            <Link>Module\Numeric\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Demo\**\*.cs">
+            <Link>Demo\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Server\Model\Generate\**\*.cs">
+            <Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Server\Model\Module\Actor\**\*.cs">
+            <Link>Module\Actor\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\Actor\**\*.cs">
+            <Link>Module\Actor\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\ActorLocation\**\*.cs">
+            <Link>Module\ActorLocation\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Script\Model\Module\CoroutineLock\**\*.cs">
+            <Link>Module\CoroutineLock\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Server\Model\Module\Console\**\*.cs">
+            <Link>Module\Console\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Remove="..\..\Unity\Assets\Script\Model\Demo\Helper\PathHelper.cs" />
+
+        <Compile Remove="..\..\Unity\Assets\Script\Model\Demo\Helper\PositionHelper.cs" />
+
+
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\AsyncETTaskCompletedMethodBuilder.cs" Link="Core\Async\AsyncETTaskCompletedMethodBuilder.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\AsyncETTaskMethodBuilder.cs" Link="Core\Async\AsyncETTaskMethodBuilder.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\AsyncETVoidMethodBuilder.cs" Link="Core\Async\AsyncETVoidMethodBuilder.cs" />
+
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\ETCancellationToken.cs" Link="Core\Async\ETCancellationToken.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\ETTask.cs" Link="Core\Async\ETTask.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\ETTaskCompleted.cs" Link="Core\Async\ETTaskCompleted.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\ETTaskHelper.cs" Link="Core\Async\ETTaskHelper.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\ETVoid.cs" Link="Core\Async\ETVoid.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Async\IAwaiter.cs" Link="Core\Async\IAwaiter.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Circularbuffer.cs" Link="Core\Circularbuffer.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\ErrorCode.cs" Link="Module\Message\ErrorCode.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Helper\RandomHelper.cs" Link="Core\Helper\RandomHelper.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Helper\StringHelper.cs" Link="Core\Helper\StringHelper.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\MultiMap.cs" Link="Core\MultiMap.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\MultiMapSet.cs" Link="Core\MultiMapSet.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\NetworkTCP\PacketParser.cs" Link="Module\NetworkTCP\PacketParser.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\NetworkTCP\TChannel.cs" Link="Module\NetworkTCP\TChannel.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\NetworkTCP\TService.cs" Link="Module\NetworkTCP\TService.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Network\AChannel.cs" Link="Module\Network\AChannel.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Network\AService.cs" Link="Module\Network\AService.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\Network\KChannel.cs" Link="Module\Network\KChannel.cs" />
+
+     
+
+      <Compile Include="..\..\Unity\Assets\Cold\Network\KService.cs" Link="Module\Network\KService.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\RpcException.cs" Link="Core\RpcException.cs" />
+
+      <Compile Include="..\..\Unity\Assets\Cold\ThreadSynchronizationContext.cs" Link="Core\ThreadSynchronizationContext.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\ThirdParty\protobuf-net\protobuf-net.csproj" />
+      <ProjectReference Include="..\..\ThirdParty\ShareLib\ShareLib.csproj" />
+      <ProjectReference Include="..\..\ThirdParty\UnityEngine\UnityEngine.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="CommandLineParser" Version="2.8.0" />
+      <PackageReference Include="mongocsharpdriver" Version="2.13.0" />
+      <PackageReference Include="NLog" Version="4.7.10" />
+      <PackageReference Include="SharpZipLib" Version="1.3.2" />
+    </ItemGroup>
+
+</Project>

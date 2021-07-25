@@ -46,7 +46,7 @@ namespace ETModel
             }
             catch (Exception e)
             {
-#if SERVER
+#if NOT_UNITY
                 ET.Log.Error(e);
 #else
                 UnityEngine.Debug.LogError(e);
@@ -60,9 +60,9 @@ namespace ETModel
             {
                 return;
             }
-#if SERVER
+#if NOT_UNITY
             await ET.TimerComponent.Instance.WaitAsync(afterTimeCancel);
-#else
+#else   //此处应该作为拓展方法使用 待修复
             //await TimerComponent.Instance.WaitAsync(afterTimeCancel);
 #endif
 

@@ -8,7 +8,7 @@
 */
 
 using System.Collections.Generic;
-#if SERVER
+#if NOT_UNITY
 namespace ET
 {
     public class ListComponent<T> : Object
