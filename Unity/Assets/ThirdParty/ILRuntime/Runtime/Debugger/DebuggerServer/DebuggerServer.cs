@@ -475,21 +475,30 @@ namespace ILRuntime.Runtime.Debugger
             foreach (var i in info)
             {
                 bw.Write(i.Key);
-                bw.Write(i.Value.Length);
-                foreach (var j in i.Value)
+                
+                if(i.Value == null)
                 {
-                    bw.Write(j.MethodName);
-                    bw.Write(j.DocumentName);
-                    bw.Write(j.StartLine);
-                    bw.Write(j.StartColumn);
-                    bw.Write(j.EndLine);
-                    bw.Write(j.EndColumn);
-                    bw.Write(j.LocalVariables.Length);
-                    foreach (var k in j.LocalVariables)
+                    bw.Write(0);
+                }
+                else
+                {
+                    bw.Write(i.Value.Length);
+                    foreach (var j in i.Value)
                     {
-                        WriteVariableInfo(k);
+                        bw.Write(j.MethodName);
+                        bw.Write(j.DocumentName);
+                        bw.Write(j.StartLine);
+                        bw.Write(j.StartColumn);
+                        bw.Write(j.EndLine);
+                        bw.Write(j.EndColumn);
+                        bw.Write(j.LocalVariables.Length);
+                        foreach (var k in j.LocalVariables)
+                        {
+                            WriteVariableInfo(k);
+                        }
                     }
                 }
+                
             }
         }
 

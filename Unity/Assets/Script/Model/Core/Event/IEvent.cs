@@ -11,12 +11,8 @@ namespace ET
 
     [Event]
 
-#if SERVER
-    public abstract class AEvent<A> : IEvent where A : struct
-#else
-	public abstract class AEvent<A>: IEvent where A: struct
-#endif
 
+	public abstract class AEvent<A>: IEvent where A: struct
     {
         public Type GetEventType()
         {

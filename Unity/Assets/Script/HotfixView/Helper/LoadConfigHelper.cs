@@ -8,13 +8,16 @@ namespace ET
     {
         public static void LoadAllConfigBytes(Dictionary<string, byte[]> output)
         {
-            Dictionary<string, UnityEngine.Object> keys = ResourcesComponent.Instance.GetBundleAll("config.unity3d");
+            var types = Game.EventSystem.GetTypes(typeof(ConfigAttribute));
+          
+           // Dictionary<string, UnityEngine.Object> keys = ResourcesComponent.Instance.GetBundleAll("config.unity3d");
 
-            foreach (var kv in keys)
+            foreach (var type in types)
             {
-                TextAsset v = kv.Value as TextAsset;
-                string key = kv.Key;
-                output[key] = v.bytes;
+                var path = ETModel.ABPathHelper.GetConfigPath(type.Name);
+                var asset = ResourcesComponent.Instance.LoadAsset<TextAsset>(path);
+                
+                output[type.Name] = asset.bytes;
             }
         }
     }

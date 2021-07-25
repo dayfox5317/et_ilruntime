@@ -26,29 +26,29 @@ namespace ETModel
         {
             Debug.Log($"当前Mono模式");
             MonoStaticMethod start = null;
-            //foreach (var item in loadDic)
-            //{
-            //    byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
-            //    byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
-            //    var assembly = Assembly.Load(assBytes, pdbBytes);
-            //    types.AddRange(assembly.GetTypes());
-            //    Type initType = assembly.GetType("ET.Init");
-            //    if (initType != null)
-            //    {
-            //        start = new MonoStaticMethod(initType, "Start");
-            //    }
-            //}
-
-
-            byte[] assBytes = LoadHelper.LoadCode("Sripte.dll").bytes;
-            byte[] pdbBytes = LoadHelper.LoadCode("Sripte.pdb").bytes;
-            var assembly = Assembly.Load(assBytes, pdbBytes);
-            types.AddRange(assembly.GetTypes());
-            Type initType = assembly.GetType("ET.Init");
-            if (initType != null)
+            foreach (var item in loadDic)
             {
-                start = new MonoStaticMethod(initType, "Start");
+                byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
+                byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
+                var assembly = Assembly.Load(assBytes, pdbBytes);
+                types.AddRange(assembly.GetTypes());
+                Type initType = assembly.GetType("ET.Init");
+                if (initType != null)
+                {
+                    start = new MonoStaticMethod(initType, "Start");
+                }
             }
+
+
+            //byte[] assBytes = LoadHelper.LoadCode("Sripte.dll").bytes;
+            //byte[] pdbBytes = LoadHelper.LoadCode("Sripte.pdb").bytes;
+            //var assembly = Assembly.Load(assBytes, pdbBytes);
+            //types.AddRange(assembly.GetTypes());
+            //Type initType = assembly.GetType("ET.Init");
+            //if (initType != null)
+            //{
+            //    start = new MonoStaticMethod(initType, "Start");
+            //}
             if (start == null)
             {
                 Debug.LogError("找不到入口");

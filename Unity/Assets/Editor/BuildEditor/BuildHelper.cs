@@ -52,7 +52,8 @@ namespace ET
             }
 
             Log.Info("开始资源打包");
-            BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
+            BuildXAssetHelper.Start(buildTarget);
+            //BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
 
             Log.Info("完成资源打包");
 

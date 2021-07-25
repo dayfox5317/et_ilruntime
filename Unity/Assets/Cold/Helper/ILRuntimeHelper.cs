@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,10 +33,11 @@ namespace ETModel
         {
             Debug.Log($"当前使用的是ILRuntime模式");
             appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();
-            var reader = new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider();
+           // var reader = new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider();
 
             foreach (var item in loadDic)
             {
+              
                 byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
                 byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
                 var assStream = new MemoryStream(assBytes);
@@ -45,6 +47,7 @@ namespace ETModel
 
             foreach (var item in streamList)
             {
+                var reader = new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider();
                 appDomain.LoadAssembly(item.code, item.pdb, reader);
             }
 

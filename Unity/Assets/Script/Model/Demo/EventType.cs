@@ -2,8 +2,7 @@ namespace ET
 {
     namespace EventType
     {
-        //这里都换成 class 不知道为什么 在ilruntime  Game.EventSystem.Publish发布后 出现NotSupportedException: Specified method is not supported. 报错
-        //但是看烟雨的Demo ILRT 中却可以直接使用 strtct
+     
         public struct AppStart
         {
         }

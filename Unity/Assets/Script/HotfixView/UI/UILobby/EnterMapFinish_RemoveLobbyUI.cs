@@ -9,10 +9,14 @@ namespace ET
 		{
 			await UIHelper.Remove(args.ZoneScene, UIType.UILobby);
 			// 加载场景资源
-			await ResourcesComponent.Instance.LoadBundleAsync("map.unity3d");
-            // 切换到map场景
-        //    using (SceneChangeComponent sceneChangeComponent = Game.Scene.AddComponent<SceneChangeComponent>())
-            {
+
+			var path = ABPathHelper.GetScenePath("Map");
+			var rs = await ResourcesComponent.Instance.LoadSceneAsync(path);
+			
+			//await ResourcesComponent.Instance.LoadBundleAsync("map.unity3d");
+			// 切换到map场景
+			//    using (SceneChangeComponent sceneChangeComponent = Game.Scene.AddComponent<SceneChangeComponent>())
+			{
 				SceneChangeComponent sceneChangeComponent = Game.Scene.AddComponent<SceneChangeComponent>();
 
 				await sceneChangeComponent.ChangeSceneAsync("Map");

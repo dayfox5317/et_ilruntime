@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ETModel
@@ -7,7 +8,8 @@ namespace ETModel
     {
         public static void StartHotfix()
         {
-            if (Define.IsILRuntime)
+            if (Define.IsILRuntime && !Define.Force_Mono
+                 )
             {
                 ILRuntimeHelper.Start();
             }
@@ -19,7 +21,7 @@ namespace ETModel
 
         public static List<Type> GetTypes()
         {
-            return Define.IsILRuntime ? ILRuntimeHelper.Types : MonoHelper.Types;
+            return Define.IsILRuntime && !Define.Force_Mono ? ILRuntimeHelper.Types : MonoHelper.Types;
         }
 
     }

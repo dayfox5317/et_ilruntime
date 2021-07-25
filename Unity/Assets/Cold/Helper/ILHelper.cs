@@ -1,7 +1,7 @@
 using ILRuntime.CLR.Method;
 using ILRuntime.CLR.Utils;
 using ILRuntime.Runtime.Enviorment;
-using ILRuntime.Runtime.Generated;
+//using ILRuntime.Runtime.Generated;
 using ILRuntime.Runtime.Intepreter;
 using ILRuntime.Runtime.Stack;
 
@@ -20,11 +20,13 @@ namespace ETModel
     {
         public static void InitILRuntime(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
         {
+#if DEBUG && !NO_PROFILER
             appdomain.UnityMainThreadID = Thread.CurrentThread.ManagedThreadId;
-
-#if UNITY_EDITOR
-            appdomain.DebugService.StartDebugService(56000);
 #endif
+
+//#if UNITY_EDITOR
+            appdomain.DebugService.StartDebugService(56000);
+//#endif
             //跨域继承
             RegisterCrossBindingAdaptor(appdomain);
 
@@ -36,7 +38,14 @@ namespace ETModel
             RegisterFunctionDelegate(appdomain);
             RegisterDelegateConvertor(appdomain);
 
-            CLRBindings.Initialize(appdomain);//最后才执行 ClrBindings
+            ////////////////////////////////////
+            // CLR绑定的注册，一定要记得将CLR绑定的注册写在CLR重定向的注册后面，因为同一个方法只能被重定向一次，只有先注册的那个才能生效
+            ////////////////////////////////////
+            Type t = Type.GetType("ILRuntime.Runtime.Generated.CLRBindings");
+            if (t != null)
+            {
+                t.GetMethod("Initialize")?.Invoke(null, new object[] { appdomain });
+            }
         }
 
 
@@ -77,6 +86,8 @@ namespace ETModel
             appdomain.DelegateManager.RegisterMethodDelegate<long, int>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, MemoryStream>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
+
+            appdomain.DelegateManager.RegisterMethodDelegate<libx.AssetRequest>();
         }
         ///带返回委托适配
 
@@ -99,6 +110,7 @@ namespace ETModel
         ///委托转换
         public static void RegisterDelegateConvertor(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
         {
+
             appdomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction>((act) =>
             {
                 return new UnityEngine.Events.UnityAction(() =>

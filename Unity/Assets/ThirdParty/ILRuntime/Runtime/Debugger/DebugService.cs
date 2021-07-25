@@ -471,11 +471,12 @@ namespace ILRuntime.Runtime.Debugger
         void DoBreak(ILIntepreter intp, int bpHash, bool isStep)
         {
             var arr = AppDomain.Intepreters.ToArray();
-            KeyValuePair<int, StackFrameInfo[]>[] frames = new KeyValuePair<int, StackFrameInfo[]>[arr.Length];
+            KeyValuePair<int, StackFrameInfo[]>[] frames = new KeyValuePair<int, StackFrameInfo[]>[arr.Length + 1];
             frames[0] = new KeyValuePair<int, StackFrameInfo[]>(intp.GetHashCode(), GetStackFrameInfo(intp));
             int idx = 1;
             foreach (var j in arr)
             {
+               
                 if (j.Value != intp)
                 {
                     j.Value.ShouldBreak = true;
@@ -489,6 +490,7 @@ namespace ILRuntime.Runtime.Debugger
                     }
                 }
             }
+          
             if (!isStep)
                 server.SendSCBreakpointHit(intp.GetHashCode(), bpHash, frames);
             else

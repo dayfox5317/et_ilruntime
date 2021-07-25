@@ -34,6 +34,8 @@ namespace ET
             }
             catch (Exception e)
             {
+                Log.Info("登陆gate 失败!");
+                
                 Log.Error(e);
             }
         } 
