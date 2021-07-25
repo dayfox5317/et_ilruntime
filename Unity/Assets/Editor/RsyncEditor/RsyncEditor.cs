@@ -26,7 +26,7 @@ namespace ET
 				return;
 			}
 			string s = File.ReadAllText(ConfigFile);
-			this.rsyncConfig = MongoHelper.FromJson<RsyncConfig>(s);
+			this.rsyncConfig = JsonHelper.FromJson<RsyncConfig>(s);
 		}
 
 		private void OnGUI()
@@ -60,7 +60,7 @@ namespace ET
 
 			if (GUILayout.Button("保存"))
 			{
-				File.WriteAllText(ConfigFile, MongoHelper.ToJson(this.rsyncConfig));
+				File.WriteAllText(ConfigFile, JsonHelper.ToJson(this.rsyncConfig));
 				using (StreamWriter sw = new StreamWriter(new FileStream(@"..\Tools\cwRsync\Config\exclude.txt", FileMode.Create)))
 				{
 					foreach (string s in this.rsyncConfig.Exclude)

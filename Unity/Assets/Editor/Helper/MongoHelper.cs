@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NOT_UNITY
+using System;
 using System.Collections.Generic;
 using System.IO;
 using MongoDB.Bson;
@@ -28,11 +29,12 @@ namespace ET
 			BsonSerializer.RegisterSerializer(typeof(Quaternion), new StructBsonSerialize<Quaternion>());
             BsonSerializer.RegisterSerializer(typeof(Vector3), new StructBsonSerialize<Vector3>());
             BsonSerializer.RegisterSerializer(typeof(Vector4), new StructBsonSerialize<Vector4>());
-#else
+#elif NOT_UNITY
             BsonSerializer.RegisterSerializer(typeof (Vector4), new StructBsonSerialize<Vector4>());
             BsonSerializer.RegisterSerializer(typeof (Vector3), new StructBsonSerialize<Vector3>());
            // BsonSerializer.RegisterSerializer(typeof (Vector2Int), new StructBsonSerialize<Vector2Int>());
 #endif
+
 
             var types = Game.EventSystem.GetTypes();
 
@@ -50,6 +52,7 @@ namespace ET
 
                 BsonClassMap.LookupClassMap(type);
             }
+
         }
 
         public static void Init()
@@ -165,3 +168,4 @@ namespace ET
         }
     }
 }
+#endif

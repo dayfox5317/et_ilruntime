@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NOT_UNITY
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using MongoDB.Bson;
@@ -55,3 +56,4 @@ namespace ET
         }
     }
 }
+#endif

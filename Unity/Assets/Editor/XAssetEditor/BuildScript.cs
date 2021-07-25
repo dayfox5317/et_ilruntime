@@ -41,11 +41,11 @@ namespace libx
         public static string outputPath = "../Release/DLC/" + GetPlatformName();
 
 
-        private static BuildTarget Current_BuildTarget;
+        private static BuildTarget Current_BuildTarget  = EditorUserBuildSettings.activeBuildTarget;
 
         public static void SetBuildTarget(BuildTarget buildTarget)
         {
-            Current_BuildTarget = buildTarget;
+            Current_BuildTarget = EditorUserBuildSettings.activeBuildTarget;
 
             
         }

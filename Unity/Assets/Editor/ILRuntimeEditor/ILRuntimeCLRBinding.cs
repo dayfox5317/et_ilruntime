@@ -29,6 +29,8 @@ public static class ILRuntimeCLRBinding
         types.Add(typeof(RectTransform));
         types.Add(typeof(Time));
         types.Add(typeof(Debug));
+    
+       
         //所有DLL内的类型的真实C#类型都是ILTypeInstance
         types.Add(typeof(List<ILRuntime.Runtime.Intepreter.ILTypeInstance>));
 

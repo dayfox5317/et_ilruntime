@@ -170,6 +170,8 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_Camera_Binding.Register(app);
             UnityEngine_Component_Binding.Register(app);
             UnityEngine_Transform_Binding.Register(app);
+            ETModel_GameLoop_Binding.Register(app);
+            ETModel_HotfixHelper_Binding.Register(app);
             UnityEngine_LayerMask_Binding.Register(app);
             UnityEngine_GameObject_Binding.Register(app);
             ET_ComponentView_Binding.Register(app);
@@ -177,8 +179,6 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding_ValueCollection_Binding_Enumerator_Binding.Register(app);
             UnityEngine_Object_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int32_Transform_Binding.Register(app);
-            ETModel_GameLoop_Binding.Register(app);
-            ETModel_HotfixHelper_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_AnimationClip_Binding.Register(app);
             System_Collections_Generic_HashSet_1_String_Binding.Register(app);
             ETModel_AsyncETVoidMethodBuilder_Binding.Register(app);

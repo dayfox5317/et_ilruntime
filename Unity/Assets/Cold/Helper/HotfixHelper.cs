@@ -8,6 +8,24 @@ namespace ETModel
     {
         public static void StartHotfix()
         {
+            var list = new List<Type>() {
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonIdAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonIgnoreAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonIgnoreExtraElementsAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfDefaultAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfNullAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonDefaultValueAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonRequiredAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonElementAttribute),
+        typeof(MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute),
+        typeof(MongoDB.Bson.Serialization.BsonSerializer),
+        typeof(System.Runtime.Serialization.IgnoreDataMemberAttribute),
+
+
+        };
+
+
+
             if (Define.IsILRuntime && !Define.Force_Mono
                  )
             {

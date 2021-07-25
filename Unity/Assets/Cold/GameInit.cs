@@ -10,6 +10,9 @@ namespace ETModel
         public bool Force_UseMono;
         void Awake()
         {
+         
+
+
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
             DontDestroyOnLoad(this.gameObject);
             Define.IsEditor = Application.isEditor;
