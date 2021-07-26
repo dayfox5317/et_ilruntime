@@ -27,6 +27,10 @@ namespace ILRuntime.Runtime.Generated
             app.RegisterCLRFieldGetter(field, get_IsILRuntime_0);
             app.RegisterCLRFieldSetter(field, set_IsILRuntime_0);
             app.RegisterCLRFieldBinding(field, CopyToStack_IsILRuntime_0, AssignFromStack_IsILRuntime_0);
+            field = type.GetField("Force_Mono", flag);
+            app.RegisterCLRFieldGetter(field, get_Force_Mono_1);
+            app.RegisterCLRFieldSetter(field, set_Force_Mono_1);
+            app.RegisterCLRFieldBinding(field, CopyToStack_Force_Mono_1, AssignFromStack_Force_Mono_1);
 
 
         }
@@ -56,6 +60,32 @@ namespace ILRuntime.Runtime.Generated
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
             System.Boolean @IsILRuntime = ptr_of_this_method->Value == 1;
             ETModel.Define.IsILRuntime = @IsILRuntime;
+            return ptr_of_this_method;
+        }
+
+        static object get_Force_Mono_1(ref object o)
+        {
+            return ETModel.Define.Force_Mono;
+        }
+
+        static StackObject* CopyToStack_Force_Mono_1(ref object o, ILIntepreter __intp, StackObject* __ret, IList<object> __mStack)
+        {
+            var result_of_this_method = ETModel.Define.Force_Mono;
+            __ret->ObjectType = ObjectTypes.Integer;
+            __ret->Value = result_of_this_method ? 1 : 0;
+            return __ret + 1;
+        }
+
+        static void set_Force_Mono_1(ref object o, object v)
+        {
+            ETModel.Define.Force_Mono = (System.Boolean)v;
+        }
+
+        static StackObject* AssignFromStack_Force_Mono_1(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
+            System.Boolean @Force_Mono = ptr_of_this_method->Value == 1;
+            ETModel.Define.Force_Mono = @Force_Mono;
             return ptr_of_this_method;
         }
 

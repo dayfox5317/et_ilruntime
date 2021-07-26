@@ -64,5 +64,20 @@ namespace ETModel
             types = appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToList();
             start.Run();
         }
+
+        public static void Dispose()
+        {
+
+            appDomain.Dispose();
+            appDomain = null;
+            for (int i = 0; i < streamList.Count; i++)
+            {
+
+                streamList[i].code.Dispose();
+                streamList[i].pdb.Dispose();
+            }
+            libx.Assets.RemoveUnusedAssets();
+          
+        }
     }
 }

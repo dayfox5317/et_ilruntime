@@ -68,6 +68,13 @@ namespace ET
             GameLoop.onLateUpdate -= LateUpdate;
             GameLoop.onApplicationQuit -= OnApplicationQuit;
             Game.Close();
+
+            if (Define.IsILRuntime && !Define.Force_Mono
+                 )
+            {
+                ILRuntimeHelper.Dispose();
+            }
+            UnityEngine.Application.Quit();
         }
     }
 }

@@ -24,9 +24,9 @@ namespace ETModel
             appdomain.UnityMainThreadID = Thread.CurrentThread.ManagedThreadId;
 #endif
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
             appdomain.DebugService.StartDebugService(56000);
-//#endif
+#endif
             //跨域继承
             RegisterCrossBindingAdaptor(appdomain);
 

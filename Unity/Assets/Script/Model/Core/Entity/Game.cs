@@ -7,9 +7,9 @@ namespace ET
 {
     public static class Game
     {
-#if SERVER||NOT_UNITY
+//#if SERVER||NOT_UNITY
         public static ThreadSynchronizationContext ThreadSynchronizationContext => ThreadSynchronizationContext.Instance;
-#endif
+//#endif
         public static TimeInfo TimeInfo => TimeInfo.Instance;
 
         public static EventSystem EventSystem => EventSystem.Instance;
@@ -61,9 +61,9 @@ namespace ET
 
         public static void Update()
         {
-#if SERVER || NOT_UNITY
+//#if SERVER || NOT_UNITY
             ThreadSynchronizationContext.Update();
-#endif
+//#endif
             TimeInfo.Update();
             EventSystem.Update();
         }
@@ -89,6 +89,7 @@ namespace ET
             ObjectPool.Instance.Dispose();
             EventSystem.Instance.Dispose();
             IdGenerater.Instance.Dispose();
+           
         }
     }
 }

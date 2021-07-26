@@ -22,6 +22,7 @@ namespace ILRuntime.Runtime.Generated
         /// </summary>
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
+            ETModel_ThreadSynchronizationContext_Binding.Register(app);
             System_Collections_Generic_List_1_Action_Binding.Register(app);
             System_Collections_Generic_List_1_Action_Binding_Enumerator_Binding.Register(app);
             System_Action_Binding.Register(app);
@@ -172,6 +173,7 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_Transform_Binding.Register(app);
             ETModel_GameLoop_Binding.Register(app);
             ETModel_HotfixHelper_Binding.Register(app);
+            ETModel_ILRuntimeHelper_Binding.Register(app);
             UnityEngine_LayerMask_Binding.Register(app);
             UnityEngine_GameObject_Binding.Register(app);
             ET_ComponentView_Binding.Register(app);
@@ -200,7 +202,6 @@ namespace ILRuntime.Runtime.Generated
             ETModel_ETTaskHelper_Binding.Register(app);
             ET_TService_Binding.Register(app);
             ETModel_RandomHelper_Binding.Register(app);
-            ETModel_ThreadSynchronizationContext_Binding.Register(app);
             System_Collections_Generic_HashSet_1_AService_Binding_Enumerator_Binding.Register(app);
             System_BitConverter_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Type_Object_Binding_ValueCollection_Binding.Register(app);

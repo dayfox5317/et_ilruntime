@@ -731,7 +731,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: NET452;ILRuntime
+    1: NET452;ILRuntime;DISABLE_ILRUNTIME_DEBUG
     4: NET452;ILRuntime
     7: NET452;ILRuntime
     13: NET452;ILRuntime
@@ -742,7 +742,8 @@ PlayerSettings:
     Android: 0
     Standalone: 1
     iPhone: 1
-  il2cppCompilerConfiguration: {}
+  il2cppCompilerConfiguration:
+    Standalone: 1
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
