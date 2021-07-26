@@ -17,7 +17,7 @@ namespace ET
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartSceneConfig> list = new List<StartSceneConfig>();
+        private StartSceneConfig[] list ;
 		
         public StartSceneConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

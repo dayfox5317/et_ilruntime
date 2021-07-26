@@ -17,7 +17,7 @@ namespace ET
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartProcessConfig> list = new List<StartProcessConfig>();
+        private StartProcessConfig[] list ;
 		
         public StartProcessConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

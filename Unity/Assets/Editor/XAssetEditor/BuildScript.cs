@@ -41,18 +41,18 @@ namespace libx
         public static string outputPath = "../Release/DLC/" + GetPlatformName();
 
 
-        private static BuildTarget Current_BuildTarget  = EditorUserBuildSettings.activeBuildTarget;
+        private static BuildTarget Current_BuildTarget  => EditorUserBuildSettings.activeBuildTarget;
 
         public static void SetBuildTarget(BuildTarget buildTarget)
         {
-            Current_BuildTarget = EditorUserBuildSettings.activeBuildTarget;
+         //   Current_BuildTarget = EditorUserBuildSettings.activeBuildTarget;
 
             
         }
 
         public static void RestoreBuildTarget(BuildTarget buildTarget)
         {
-            Current_BuildTarget = EditorUserBuildSettings.activeBuildTarget;
+           // Current_BuildTarget = EditorUserBuildSettings.activeBuildTarget;
         }
         public static void ClearAssetBundles()
         {

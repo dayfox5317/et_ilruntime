@@ -20,8 +20,9 @@ namespace ETModel
         typeof(MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute),
         typeof(MongoDB.Bson.Serialization.BsonSerializer),
         typeof(System.Runtime.Serialization.IgnoreDataMemberAttribute),
-
-
+           typeof(ProtoBuf.ProtoContractAttribute),
+           typeof(ProtoBuf.ProtoMemberAttribute),
+              typeof(ProtoBuf.ProtoIgnoreAttribute),
         };
 
 

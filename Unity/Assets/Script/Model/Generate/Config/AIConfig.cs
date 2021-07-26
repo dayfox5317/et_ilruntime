@@ -14,10 +14,10 @@ namespace ET
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, AIConfig> dict = new Dictionary<int, AIConfig>();
-		
+
         [BsonElement]
         [ProtoMember(1)]
-        private List<AIConfig> list = new List<AIConfig>();
+        private AIConfig[] list;//= new List<AIConfig>();
 		
         public AIConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

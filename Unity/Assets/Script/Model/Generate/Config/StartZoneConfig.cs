@@ -14,10 +14,10 @@ namespace ET
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, StartZoneConfig> dict = new Dictionary<int, StartZoneConfig>();
-		
+
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartZoneConfig> list = new List<StartZoneConfig>();
+        private StartZoneConfig[] list;//= new List<StartZoneConfig>();
 		
         public StartZoneConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

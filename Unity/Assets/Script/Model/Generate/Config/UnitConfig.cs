@@ -14,10 +14,10 @@ namespace ET
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, UnitConfig> dict = new Dictionary<int, UnitConfig>();
-		
+
         [BsonElement]
         [ProtoMember(1)]
-        private List<UnitConfig> list = new List<UnitConfig>();
+        private UnitConfig[] list;//= new List<UnitConfig>();
 		
         public UnitConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

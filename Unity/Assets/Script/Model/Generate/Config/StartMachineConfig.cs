@@ -17,7 +17,7 @@ namespace ET
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartMachineConfig> list = new List<StartMachineConfig>();
+        private StartMachineConfig[] list ;
 		
         public StartMachineConfigCategory()
         {
@@ -32,7 +32,7 @@ namespace ET
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		
