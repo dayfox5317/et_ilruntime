@@ -55,7 +55,7 @@ namespace ILRuntime.Runtime.Generated
             System.Int32 @level = ptr_of_this_method->Value;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.SetLevel(@level);
@@ -70,11 +70,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.Byte[] @input = (System.Byte[])typeof(System.Byte[]).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Byte[] @input = (System.Byte[])typeof(System.Byte[]).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.SetInput(@input);
@@ -89,7 +89,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.Finish();
@@ -104,11 +104,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.Byte[] @output = (System.Byte[])typeof(System.Byte[]).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Byte[] @output = (System.Byte[])typeof(System.Byte[]).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.Deflate(@output);
@@ -125,7 +125,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ICSharpCode.SharpZipLib.Zip.Compression.Deflater instance_of_this_method = (ICSharpCode.SharpZipLib.Zip.Compression.Deflater)typeof(ICSharpCode.SharpZipLib.Zip.Compression.Deflater).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.IsFinished;

@@ -37,11 +37,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            ETModel.ETTask @item = (ETModel.ETTask)typeof(ETModel.ETTask).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ETModel.ETTask @item = (ETModel.ETTask)typeof(ETModel.ETTask).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Collections.Generic.List<ETModel.ETTask> instance_of_this_method = (System.Collections.Generic.List<ETModel.ETTask>)typeof(System.Collections.Generic.List<ETModel.ETTask>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Collections.Generic.List<ETModel.ETTask> instance_of_this_method = (System.Collections.Generic.List<ETModel.ETTask>)typeof(System.Collections.Generic.List<ETModel.ETTask>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.Add(@item);

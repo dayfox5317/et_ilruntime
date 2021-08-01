@@ -43,7 +43,7 @@ namespace ILRuntime.Runtime.Generated
             System.Boolean @value = ptr_of_this_method->Value == 1;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.IO.StreamWriter instance_of_this_method = (System.IO.StreamWriter)typeof(System.IO.StreamWriter).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.IO.StreamWriter instance_of_this_method = (System.IO.StreamWriter)typeof(System.IO.StreamWriter).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.AutoFlush = value;
@@ -58,7 +58,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* ptr_of_this_method;
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.IO.Stream @stream = (System.IO.Stream)typeof(System.IO.Stream).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.IO.Stream @stream = (System.IO.Stream)typeof(System.IO.Stream).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
 

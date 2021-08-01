@@ -37,7 +37,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.Net.NetworkInformation.IPAddressInformation instance_of_this_method = (System.Net.NetworkInformation.IPAddressInformation)typeof(System.Net.NetworkInformation.IPAddressInformation).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Net.NetworkInformation.IPAddressInformation instance_of_this_method = (System.Net.NetworkInformation.IPAddressInformation)typeof(System.Net.NetworkInformation.IPAddressInformation).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.Address;

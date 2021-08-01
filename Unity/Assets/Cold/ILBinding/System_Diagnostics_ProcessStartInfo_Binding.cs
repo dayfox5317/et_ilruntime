@@ -58,11 +58,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.FileName = value;
@@ -77,11 +77,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.Arguments = value;
@@ -99,7 +99,7 @@ namespace ILRuntime.Runtime.Generated
             System.Boolean @value = ptr_of_this_method->Value == 1;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.CreateNoWindow = value;
@@ -117,7 +117,7 @@ namespace ILRuntime.Runtime.Generated
             System.Boolean @value = ptr_of_this_method->Value == 1;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.UseShellExecute = value;
@@ -132,11 +132,11 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 2);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.String @value = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.WorkingDirectory = value;
@@ -154,7 +154,7 @@ namespace ILRuntime.Runtime.Generated
             System.Boolean @value = ptr_of_this_method->Value == 1;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.RedirectStandardOutput = value;
@@ -172,7 +172,7 @@ namespace ILRuntime.Runtime.Generated
             System.Boolean @value = ptr_of_this_method->Value == 1;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            System.Diagnostics.ProcessStartInfo instance_of_this_method = (System.Diagnostics.ProcessStartInfo)typeof(System.Diagnostics.ProcessStartInfo).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.RedirectStandardError = value;

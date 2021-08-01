@@ -60,7 +60,7 @@ MonoBehaviour:
     gameObject: {fileID: 4900000, guid: ea840b4695d272c49ad6664d44a55ec3, type: 3}
   - key: ModelView.pdb
     gameObject: {fileID: 4900000, guid: b0f2c25a5eeab1040aa4925ce05035b9, type: 3}
-  - key: Sripte.dll
-    gameObject: {fileID: 4900000, guid: d9428514add18de4f98e59e5fdebeccf, type: 3}
-  - key: Sripte.pdb
-    gameObject: {fileID: 4900000, guid: f56afacb77f60354a98de0c6892d5465, type: 3}
+  - key: Script.dll
+    gameObject: {fileID: 4900000, guid: e1a9414521105004fb6f793e717e5089, type: 3}
+  - key: Script.pdb
+    gameObject: {fileID: 4900000, guid: e980d2cd73772f04f8f783f99e3c91f1, type: 3}

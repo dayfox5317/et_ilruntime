@@ -9,7 +9,8 @@
         "Unity.HotfixView",
         "ILRuntime",
         "Unity.Cold",
-        "Unity.Sripte"
+        "Unity.Sripte",
+        "Unity.Script"
     ],
     "includePlatforms": [
         "Editor"

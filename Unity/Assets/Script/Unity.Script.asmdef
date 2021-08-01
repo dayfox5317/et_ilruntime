@@ -1,5 +1,5 @@
 {
-    "name": "Unity.Sripte",
+    "name": "Unity.Script",
     "rootNamespace": "",
     "references": [
         "Unity.ThirdParty",

@@ -85,7 +85,7 @@ namespace ILRuntime.Runtime.Generated
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
             ptr_of_this_method = ILIntepreter.GetObjectAndResolveReference(ptr_of_this_method);
-            System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>> instance_of_this_method = (System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>>)typeof(System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)16);
+            System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>> instance_of_this_method = (System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>>)typeof(System.Collections.Generic.KeyValuePair<System.Type, System.Collections.Generic.HashSet<System.Type>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
 
             var result_of_this_method = instance_of_this_method.Value;
 

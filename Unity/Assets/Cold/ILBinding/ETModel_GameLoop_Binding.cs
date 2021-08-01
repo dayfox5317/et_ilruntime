@@ -60,7 +60,7 @@ namespace ILRuntime.Runtime.Generated
         static StackObject* AssignFromStack_onUpdate_0(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
         {
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
-            System.Action @onUpdate = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)8);
+            System.Action @onUpdate = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             ETModel.GameLoop.onUpdate = @onUpdate;
             return ptr_of_this_method;
         }
@@ -84,7 +84,7 @@ namespace ILRuntime.Runtime.Generated
         static StackObject* AssignFromStack_onLateUpdate_1(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
         {
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
-            System.Action @onLateUpdate = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)8);
+            System.Action @onLateUpdate = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             ETModel.GameLoop.onLateUpdate = @onLateUpdate;
             return ptr_of_this_method;
         }
@@ -108,7 +108,7 @@ namespace ILRuntime.Runtime.Generated
         static StackObject* AssignFromStack_onApplicationQuit_2(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
         {
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
-            System.Action @onApplicationQuit = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)8);
+            System.Action @onApplicationQuit = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             ETModel.GameLoop.onApplicationQuit = @onApplicationQuit;
             return ptr_of_this_method;
         }

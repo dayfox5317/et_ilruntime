@@ -54,7 +54,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            ETModel.ListComponent<UnityEngine.Vector3> instance_of_this_method = (ETModel.ListComponent<UnityEngine.Vector3>)typeof(ETModel.ListComponent<UnityEngine.Vector3>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ETModel.ListComponent<UnityEngine.Vector3> instance_of_this_method = (ETModel.ListComponent<UnityEngine.Vector3>)typeof(ETModel.ListComponent<UnityEngine.Vector3>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.List;
@@ -69,7 +69,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            ETModel.ListComponent<UnityEngine.Vector3> instance_of_this_method = (ETModel.ListComponent<UnityEngine.Vector3>)typeof(ETModel.ListComponent<UnityEngine.Vector3>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            ETModel.ListComponent<UnityEngine.Vector3> instance_of_this_method = (ETModel.ListComponent<UnityEngine.Vector3>)typeof(ETModel.ListComponent<UnityEngine.Vector3>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.Dispose();
