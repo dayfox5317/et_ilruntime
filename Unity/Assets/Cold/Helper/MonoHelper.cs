@@ -28,6 +28,11 @@ namespace ETModel
             MonoStaticMethod start = null;
             foreach (var item in loadDic)
             {
+                if (HotfixHelper.SkipDlls.Contains(item.Key))
+                {
+                    continue;
+                }
+              
                 byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
                 byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
                 var assembly = Assembly.Load(assBytes, pdbBytes);
