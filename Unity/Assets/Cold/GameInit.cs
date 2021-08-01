@@ -8,6 +8,11 @@ namespace ETModel
     public class GameInit : MonoBehaviour
     {
         public bool Force_UseMono;
+
+        /// <summary>
+        /// 需要跳过的DLL
+        /// </summary>
+        public string[] SkipDlls;
         void Awake()
         {
          
@@ -19,6 +24,7 @@ namespace ETModel
             Define.Force_Mono = Force_UseMono;
 
 
+            HotfixHelper.SkipDlls = System.Linq.Enumerable.ToList(SkipDlls);
 
         }
 

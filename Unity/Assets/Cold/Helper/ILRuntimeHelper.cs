@@ -37,11 +37,17 @@ namespace ETModel
 
             foreach (var item in loadDic)
             {
+                if (HotfixHelper.SkipDlls.Contains(item.Key))
+                {
+                    continue;
+                }
               
                 byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
                 byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
                 var assStream = new MemoryStream(assBytes);
                 var pdbStream = new MemoryStream(pdbBytes);
+
+
                 streamList.Add((assStream, pdbStream));
             }
 

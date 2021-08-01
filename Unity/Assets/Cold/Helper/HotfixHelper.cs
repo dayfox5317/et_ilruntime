@@ -20,9 +20,9 @@ namespace ETModel
         typeof(MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute),
         typeof(MongoDB.Bson.Serialization.BsonSerializer),
         typeof(System.Runtime.Serialization.IgnoreDataMemberAttribute),
-           typeof(ProtoBuf.ProtoContractAttribute),
-           typeof(ProtoBuf.ProtoMemberAttribute),
-              typeof(ProtoBuf.ProtoIgnoreAttribute),
+        typeof(ProtoBuf.ProtoContractAttribute),
+        typeof(ProtoBuf.ProtoMemberAttribute),
+        typeof(ProtoBuf.ProtoIgnoreAttribute),
         };
 
 
@@ -42,6 +42,8 @@ namespace ETModel
         {
             return Define.IsILRuntime && !Define.Force_Mono ? ILRuntimeHelper.Types : MonoHelper.Types;
         }
+
+        public static  List<string> SkipDlls;
 
     }
 }
