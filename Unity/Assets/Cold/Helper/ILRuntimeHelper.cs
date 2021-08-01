@@ -35,29 +35,29 @@ namespace ETModel
             appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();
             var reader = new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider();
 
-            // foreach (var item in loadDic)
-            // {
+            foreach (var item in loadDic)
+            {
               
-                // byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
-                // byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
-                // var assStream = new MemoryStream(assBytes);
-                // var pdbStream = new MemoryStream(pdbBytes);
-                // streamList.Add((assStream, pdbStream));
-            // }
+                byte[] assBytes = LoadHelper.LoadCode(item.Key).bytes;
+                byte[] pdbBytes = LoadHelper.LoadCode(item.Value).bytes;
+                var assStream = new MemoryStream(assBytes);
+                var pdbStream = new MemoryStream(pdbBytes);
+                streamList.Add((assStream, pdbStream));
+            }
 
-            // foreach (var item in streamList)
-            // {
-                // var reader = new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider();
-                // appDomain.LoadAssembly(item.code, item.pdb, reader);
-            // }
+            foreach (var item in streamList)
+            {
+               
+                appDomain.LoadAssembly(item.code, item.pdb, reader);
+            }
 
 
-            byte[] assBytes = LoadHelper.LoadCode("Script.dll").bytes;
-            byte[] pdbBytes = LoadHelper.LoadCode("Script.pdb").bytes;
+            // byte[] assBytes = LoadHelper.LoadCode("Script.dll").bytes;
+            // byte[] pdbBytes = LoadHelper.LoadCode("Script.pdb").bytes;
 
-            var assStream = new MemoryStream(assBytes);
-            var pdbStream = new MemoryStream(pdbBytes);
-           appDomain.LoadAssembly(assStream, pdbStream, reader);
+            // var assStream = new MemoryStream(assBytes);
+            // var pdbStream = new MemoryStream(pdbBytes);
+           // appDomain.LoadAssembly(assStream, pdbStream, reader);
 
             ILHelper.InitILRuntime(appDomain);
             start = new ILStaticMethod(appDomain, "ET.Init", "Start", 0);
@@ -70,12 +70,12 @@ namespace ETModel
 
          //   appDomain.Dispose();
             appDomain = null;
-            // for (int i = 0; i < streamList.Count; i++)
-            // {
+            for (int i = 0; i < streamList.Count; i++)
+            {
 
-                // streamList[i].code.Dispose();
-                // streamList[i].pdb.Dispose();
-            // }
+                streamList[i].code.Dispose();
+                streamList[i].pdb.Dispose();
+            }
             // libx.Assets.RemoveUnusedAssets();
           
         }

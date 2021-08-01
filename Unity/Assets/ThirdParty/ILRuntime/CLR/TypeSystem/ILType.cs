@@ -291,7 +291,7 @@ namespace ILRuntime.CLR.TypeSystem
         /// <param name="def"></param>
         void RetriveDefinitino(TypeReference def)
         {
-            if (!def.IsGenericParameter)
+            if (!def.IsGenericParameter&&definition == null)
             {
                 if (def is TypeSpecification)
                 {
@@ -1063,19 +1063,48 @@ namespace ILRuntime.CLR.TypeSystem
                 //staticInstance = new ILTypeStaticInstance(this);
             }
         }
-
-        public IType FindGenericArgument(string key)
+        private IType Generic(string key)
         {
-            if (genericArguments != null)
+            if (this.genericArguments != null)
             {
-                foreach (var i in genericArguments)
+                for (int i = 0; i < this.genericArguments.Length; i++)
                 {
-                    if (i.Key == key)
-                        return i.Value;
+                    if (this.genericArguments[i].Key == key)
+                    {
+                        return this.genericArguments[i].Value;
+                    }
                 }
             }
+
             return null;
         }
+        public IType FindGenericArgument(string key)
+        {
+            var o = this.Generic(key);
+            if (o == null && definition.GenericParameters != null)
+            {
+                for (int i = 0; i < definition.GenericParameters.Count; i++)
+                {
+                    if (definition.GenericParameters[i].Name == key)
+                    {
+                        return this.Generic("!" + i);
+                    }
+                }
+            }
+            return o;
+        }
+        //public IType FindGenericArgument(string key)
+        //{
+        //    if (genericArguments != null)
+        //    {
+        //        foreach (var i in genericArguments)
+        //        {
+        //            if (i.Key == key)
+        //                return i.Value;
+        //        }
+        //    }
+        //    return null;
+        //}
 
         public bool CanAssignTo(IType type)
         {

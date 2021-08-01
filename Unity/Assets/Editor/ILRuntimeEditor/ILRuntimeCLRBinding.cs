@@ -45,15 +45,15 @@ public static class ILRuntimeCLRBinding
         //用新的分析热更dll调用引用来生成绑定代码
         ILRuntime.Runtime.Enviorment.AppDomain domain = new ILRuntime.Runtime.Enviorment.AppDomain();
 
-        FileStream fs1 = new FileStream("Assets/Res/Code/Script.dll.bytes", FileMode.Open, FileAccess.Read);
-    //    FileStream fs2 = new FileStream("Assets/Res/Code/ModelView.dll.bytes", FileMode.Open, FileAccess.Read);
-    //    FileStream fs3 = new FileStream("Assets/Res/Code/Hotfix.dll.bytes", FileMode.Open, FileAccess.Read);
-     //   FileStream fs4 = new FileStream("Assets/Res/Code/HotfixView.dll.bytes", FileMode.Open, FileAccess.Read);
+        FileStream fs1 = new FileStream("Assets/Res/Code/Model.dll.bytes", FileMode.Open, FileAccess.Read);
+       FileStream fs2 = new FileStream("Assets/Res/Code/ModelView.dll.bytes", FileMode.Open, FileAccess.Read);
+       FileStream fs3 = new FileStream("Assets/Res/Code/Hotfix.dll.bytes", FileMode.Open, FileAccess.Read);
+       FileStream fs4 = new FileStream("Assets/Res/Code/HotfixView.dll.bytes", FileMode.Open, FileAccess.Read);
 
         domain.LoadAssembly(fs1);
-     //   domain.LoadAssembly(fs2);
-     //   domain.LoadAssembly(fs3);
-     //   domain.LoadAssembly(fs4);
+        domain.LoadAssembly(fs2);
+        domain.LoadAssembly(fs3);
+        domain.LoadAssembly(fs4);
 
        
 
@@ -62,9 +62,9 @@ public static class ILRuntimeCLRBinding
         ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, BindingPath);
 
         fs1.Close();
-      //  fs2.Close();
-      //  fs3.Close();
-      //  fs4.Close();
+        fs2.Close();
+        fs3.Close();
+        fs4.Close();
 
 
 
